@@ -207,3 +207,154 @@ function toggleCart() {
     const overlay = document.getElementById('cartOverlay');
     
     sidebar.classList.toggle('open');
+    overlay.classList.toggle('open');
+}
+
+// Atualizar UI do carrinho
+function updateCartUI() {
+    const cartCount = document.getElementById('cartCount');
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+
+    // Atualizar contador
+    cartCount.textContent = cart.length;
+
+    // Atualizar itens
+    if (cart.length === 0) {
+        cartItems.innerHTML = '<p class="empty-cart">Seu carrinho está vazio</p>';
+        cartTotal.textContent = '0,00';
+        checkoutBtn.disabled = true;
+        return;
+    }
+
+    cartItems.innerHTML = cart.map(item => `
+        <div class="cart-item">
+            <div class="cart-item-image">
+                <img src="${item.image}" alt="${item.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </div>
+            <div class="cart-item-info">
+                <div class="cart-item-name">${item.name}</div>
+                <div class="cart-item-details">Tamanho: ${item.size} | Cor: ${item.color}</div>
+                <div class="cart-item-price">R$ ${item.price.toFixed(2).replace('.', ',')}</div>
+                <div class="cart-item-controls">
+                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                    <span class="quantity">${item.quantity}</span>
+                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                    <button class="remove-item" onclick="removeFromCart(${item.id})">Remover</button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    // Calcular total
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    cartTotal.textContent = total.toFixed(2).replace('.', ',');
+    checkoutBtn.disabled = false;
+}
+
+// Atualizar quantidade
+function updateQuantity(itemId, change) {
+    const item = cart.find(i => i.id === itemId);
+    if (!item) return;
+
+    item.quantity += change;
+    if (item.quantity <= 0) {
+        removeFromCart(itemId);
+        return;
+    }
+
+    updateCartUI();
+}
+
+// Remover do carrinho
+function removeFromCart(itemId) {
+    cart = cart.filter(item => item.id !== itemId);
+    updateCartUI();
+    showNotification('Produto removido do carrinho!');
+}
+
+// Finalizar pedido
+function checkout() {
+    if (cart.length === 0) return;
+
+    let message = '*PEDIDO DYMELTI MARTINEZ*\n\n';
+    message += '*Produtos:*\n';
+    
+    cart.forEach(item => {
+        message += `• ${item.name}\n`;
+        message += `  Tamanho: ${item.size} | Cor: ${item.color}\n`;
+        message += `  Quantidade: ${item.quantity}\n`;
+        message += `  Preço: R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}\n\n`;
+    });
+
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    message += `*Total: R$ ${total.toFixed(2).replace('.', ',')}*\n\n`;
+    message += '*Forma de Pagamento:* Via WhatsApp + Frete\n\n';
+    message += 'Gostaria de finalizar este pedido!';
+
+    const whatsappUrl = `https://wa.me/5562998806950?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
+
+// Mostrar notificação
+function showNotification(message) {
+    // Criar elemento de notificação
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(45deg, #10b981, #059669);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        z-index: 10000;
+        font-weight: bold;
+        transform: translateX(100%);
+        transition: transform 0.3s;
+    `;
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    // Animar entrada
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+
+    // Remover após 3 segundos
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 3000);
+}
+
+// Fechar modal ao clicar fora
+document.getElementById('productModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeProductModal();
+    }
+});
+
+// Inicializar
+document.addEventListener('DOMContentLoaded', function() {
+    renderProducts();
+    updateCartUI();
+});
+
+// Fechar carrinho com ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const cartSidebar = document.getElementById('cartSidebar');
+        const productModal = document.getElementById('productModal');
+        
+        if (cartSidebar.classList.contains('open')) {
+            toggleCart();
+        }
+        if (productModal.classList.contains('open')) {
+            closeProductModal();
+        }
+    }
+});
