@@ -68,137 +68,107 @@ body {
 .ticker-wrapper:hover .ticker {
     animation-play-state: paused;
 }
-/* Header com Logo Artística */
+/* Header - EXATAMENTE COMO A IMAGEM 2 */
 .header {
-    background: linear-gradient(135deg, #000000, #1a1a1a);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    position: relative;
-    z-index: 100;
-    border-bottom: none;
+    background: #000000;
+    padding: 2rem 0;
+    text-align: center;
 }
 
-.header .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 20px 0;
-    gap: 0;
-}
-
-.logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding-bottom: 1.5rem;
-}
-
-.logo {
-    height: 40px;
-    width: auto;
-    filter: brightness(0) invert(1);
-    margin-bottom: 1rem;
-}
-
-.logo-text {
-    width: 100%;
+.main-logo {
     max-width: 400px;
-    height: auto;
-    background-image: url('../public/dymelti-logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 150px;
-    text-indent: -9999px;
-    overflow: hidden;
-    filter: brightness(0) invert(1);
-}
-
-/* Navegação na parte azul */
-.hero-nav {
-    background: linear-gradient(135deg, var(--primary-purple), var(--secondary-blue));
-    padding: 1rem 0;
     width: 100%;
-    margin-top: -2px;
+    height: auto;
+    filter: brightness(1.1) contrast(1.2);
+    transition: all 0.3s ease;
 }
 
-.nav {
+.main-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Navegação - EXATAMENTE COMO A IMAGEM 2 */
+.nav-section {
+    background: var(--gradient);
+    padding: 1.5rem 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
-.cart-btn:hover {
-    color: var(--primary-purple);
-    background: #ffffff;
-    border-color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .nav-link {
     text-decoration: none;
     color: #ffffff;
     font-weight: 600;
-    padding: 10px 20px;
-    border: 2px solid rgba(255,255,255,0.3);
-    border-radius: 25px;
+    padding: 12px 24px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 50px;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.15);
     backdrop-filter: blur(10px);
+    font-size: 0.95rem;
 }
 
 .nav-link:hover {
-    color: var(--primary-purple);
-    background: #ffffff;
-    border-color: #ffffff;
+    background: rgba(255,255,255,0.25);
+    border-color: rgba(255,255,255,0.8);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+}
+
+/* Carrinho - SEPARADO COMO NA IMAGEM 2 */
+.cart-container {
+    margin-top: 0.5rem;
 }
 
 .cart-btn {
     background: linear-gradient(45deg, #ff6b35, #f7931e);
-    border: 2px solid #ffffff;
-    padding: 12px 18px;
-    border-radius: 50px;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
     color: #ffffff;
     cursor: pointer;
     position: relative;
     transition: all 0.3s ease;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+    font-size: 1.2rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(255,107,53,0.4);
 }
 
 .cart-btn:hover {
-    background: linear-gradient(45deg, #f7931e, #ff6b35);
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(255,107,53,0.6);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(255,107,53,0.6);
 }
 
 .cart-count {
     position: absolute;
-    top: -8px;
-    right: -8px;
+    top: -5px;
+    right: -5px;
     background: linear-gradient(45deg, #e74c3c, #c0392b);
     color: white;
     border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    font-size: 12px;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #ffffff;
+    border: 3px solid #ffffff;
     box-shadow: 0 2px 8px rgba(231,76,60,0.5);
 }
 
