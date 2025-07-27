@@ -68,57 +68,59 @@ body {
 .ticker-wrapper:hover .ticker {
     animation-play-state: paused;
 }
-/* Header Estiloso Preto */
+/* Header com Logo Artística */
 .header {
     background: linear-gradient(135deg, #000000, #1a1a1a);
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 2px solid #333;
+    border-bottom: none;
 }
 
 .header .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem 20px;
-    gap: 1rem;
+    padding: 2rem 20px 0;
+    gap: 0;
 }
 
 .logo-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    width: 100%;
+    padding-bottom: 1.5rem;
 }
 
 .logo {
     height: 40px;
     width: auto;
     filter: brightness(0) invert(1);
+    margin-bottom: 1rem;
 }
 
 .logo-text {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 
-        0 0 10px rgba(255,255,255,0.5),
-        2px 2px 4px rgba(0,0,0,0.8);
-    font-family: 'Arial Black', sans-serif;
-    background: linear-gradient(45deg, #ffffff, #cccccc, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: shimmer 3s ease-in-out infinite;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    background-image: url('https://via.placeholder.com/400x200/1a1a1a/ffffff?text=DYMELTI+MARTINEZ');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 150px;
+    text-indent: -9999px;
+    overflow: hidden;
+    filter: brightness(1.2) contrast(1.1);
 }
 
-@keyframes shimmer {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
+/* Navegação na parte azul */
+.hero-nav {
+    background: linear-gradient(135deg, var(--primary-purple), var(--secondary-blue));
+    padding: 1rem 0;
+    width: 100%;
+    margin-top: -2px;
 }
 
 .nav {
@@ -127,6 +129,9 @@ body {
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .nav-link {
@@ -134,7 +139,7 @@ body {
     color: #ffffff;
     font-weight: 600;
     padding: 10px 20px;
-    border: 2px solid transparent;
+    border: 2px solid rgba(255,255,255,0.3);
     border-radius: 25px;
     transition: all 0.3s ease;
     text-transform: uppercase;
@@ -144,8 +149,8 @@ body {
 }
 
 .nav-link:hover {
-    color: #000000;
-    background: linear-gradient(45deg, #ffffff, #cccccc);
+    color: var(--primary-purple);
+    background: #ffffff;
     border-color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255,255,255,0.3);
