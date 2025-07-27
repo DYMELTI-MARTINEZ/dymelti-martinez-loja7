@@ -17,38 +17,26 @@ body {
     padding: 0 20px;
 }
 
-/* Letreiro Carrossel Horizontal */
-.ticker-wrapper {
-    background: var(--gradient);
+/* Letreiro animado */
+.marquee-container {
+    background: linear-gradient(90deg, #8b5cf6, #3b82f6, #1e1b4b);
     padding: 15px 0;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    width: 100%;
 }
 
-.ticker {
-    display: inline-flex;
-    animation: scroll-infinite 20s linear infinite;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--white);
+.marquee {
+    display: inline-block;
+    animation: scroll 20s linear infinite;
+    font-size: 24px;
+    font-weight: bold;
     letter-spacing: 3px;
-    white-space: nowrap;
-    will-change: transform;
-    font-family: 'Arial Black', sans-serif;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    width: max-content;
 }
 
-@keyframes scroll-infinite {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
 
 /* Header */
