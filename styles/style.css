@@ -133,22 +133,6 @@ body {
     padding: 0 20px;
 }
 
-.cart-btn {
-    background: linear-gradient(45deg, #ff6b35, #f7931e);
-    border: 2px solid rgba(255,255,255,0.3);
-    padding: 10px 20px;
-    border-radius: 25px;
-    color: #ffffff;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-}
-
 .cart-btn:hover {
     color: var(--primary-purple);
     background: #ffffff;
