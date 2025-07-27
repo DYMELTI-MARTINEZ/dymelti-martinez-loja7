@@ -1,61 +1,63 @@
-# 🛍️ DYMELTI MARTINEZ - Loja Virtual
+# DYMELTI MARTINEZ - Loja Virtual
 
-Uma loja virtual moderna e responsiva desenvolvida em HTML, CSS e JavaScript puro para a marca **DYMELTI MARTINEZ**.
+Uma loja virtual moderna e elegante construída com HTML, CSS e JavaScript puro.
 
-## ✨ Características
+## 🚀 Deploy Rápido
 
-- **Design moderno** com cores roxo, azul e preto
-- **Letreiro animado** com o nome da loja
-- **Catálogo de produtos** completo com variações
-- **Carrinho de compras** funcional
-- **Integração com WhatsApp** para finalizar pedidos
-- **Totalmente responsivo** para mobile e desktop
-- **Performance otimizada** com lazy loading
-- **Sem dependências** - apenas HTML, CSS e JS puro
+### GitHub Pages
+1. Faça o fork deste repositório
+2. Vá em Settings > Pages
+3. Selecione "Deploy from a branch" > "main"
+4. Sua loja estará disponível em: `https://seuusername.github.io/dymelti-martinez-loja`
 
-## 🏗️ Estrutura do Projeto
+### Vercel
+1. Importe este repositório no Vercel
+2. Deploy automático será feito
+3. Sua loja estará disponível no link fornecido pelo Vercel
+
+## 📁 Estrutura do Projeto
 
 ```
 dymelti-martinez-loja/
-│
-├── index.html                 # Página principal
-├── README.md                  # Documentação
-│
-├── /styles/
-│   └── style.css             # Estilos principais
-│
-├── /scripts/
-│   ├── products.js           # Dados e renderização dos produtos
-│   ├── cart.js              # Sistema de carrinho
-│   └── main.js              # Funcionalidades principais
-│
-├── /public/
-│   ├── logo.png             # Logo da loja (adicionar sua imagem)
-│   └── banner.jpg           # Banner principal (adicionar sua imagem)
-│
-└── /components/             # Componentes reutilizáveis (futuro)
+├── index.html              # Página principal
+├── styles/
+│   └── style.css          # Estilos CSS
+├── scripts/
+│   └── cart.js            # Funcionalidades JavaScript
+├── public/
+│   ├── logo.png           # Logo da loja (adicione sua imagem)
+│   └── banner.jpg         # Banner principal (adicione sua imagem)
+└── README.md              # Este arquivo
 ```
 
-## 🚀 Como usar
+## ✨ Funcionalidades
 
-### 1. **Preparar o projeto**
-```bash
-# Criar pasta do projeto
-mkdir dymelti-martinez-loja
-cd dymelti-martinez-loja
+### 🎨 Design Moderno
+- Letreiro animado com nome da loja
+- Cores roxo, azul e preto
+- Design responsivo
+- Gradientes elegantes
 
-# Criar estrutura de pastas
-mkdir styles scripts public components
-```
+### 🛍️ Loja Completa
+- Catálogo de produtos
+- Carrinho de compras funcional
+- Modal de produto com galeria
+- Variações de tamanho e cor
+- Produtos indisponíveis marcados
 
-### 2. **Adicionar os arquivos**
-- Copie todos os códigos fornecidos para seus respectivos arquivos
-- Adicione suas imagens na pasta `/public/`:
-  - `logo.png` - Logo da loja
-  - `banner.jpg` - Banner principal
+### 📱 Integração WhatsApp
+- Finalização via WhatsApp: **+55 62 99880-6950**
+- Mensagem automática formatada
+- Forma de pagamento pré-preenchida
 
-### 3. **Personalizar produtos**
-Edite o arquivo `scripts/products.js` para adicionar seus produtos:
+### 🌐 Redes Sociais
+- Instagram: **@dymelti_martinez**
+- Botões de contato direto
+
+## 🛠️ Personalização
+
+### Alterar Produtos
+Edite o arquivo `scripts/cart.js` na variável `products`:
 
 ```javascript
 const products = [
@@ -63,150 +65,48 @@ const products = [
         id: 1,
         name: "Seu Produto",
         description: "Descrição do produto",
-        price: 99.90,
-        images: ["caminho/para/imagem1.jpg", "caminho/para/imagem2.jpg"],
+        price: 199.90,
+        images: ["url-da-imagem.jpg"],
         sizes: ["P", "M", "G"],
-        colors: [
-            { name: "Cor", value: "#codigo-cor" }
-        ],
-        available: true,
-        category: "categoria"
+        colors: ["Cor1", "Cor2"],
+        available: true
     }
-    // Adicione mais produtos aqui
 ];
 ```
 
-### 4. **Subir para o GitHub**
-```bash
-# Inicializar Git
-git init
-git add .
-git commit -m "Loja virtual DYMELTI MARTINEZ"
+### Alterar Contatos
+No arquivo `scripts/cart.js`, altere:
+- **WhatsApp:** linha com `5562998806950`
+- **Instagram:** no `index.html`, altere `@dymelti_martinez`
 
-# Conectar ao GitHub
-git remote add origin https://github.com/SEU-USUARIO/dymelti-martinez-loja.git
-git branch -M main
-git push -u origin main
-```
+### Adicionar Imagens
+1. Coloque sua logo em: `public/logo.png`
+2. Coloque seu banner em: `public/banner.jpg`
+3. Para produtos, use URLs ou adicione na pasta `public/`
 
-### 5. **Deploy na Vercel**
-1. Acesse [vercel.com](https://vercel.com)
-2. Conecte sua conta do GitHub
-3. Selecione o repositório
-4. Clique em "Deploy"
+## 📱 Funcionalidades Mobile
 
-## 🎨 Personalização
+- Design totalmente responsivo
+- Carrinho ocupa tela inteira no mobile
+- Navegação otimizada para touch
+- Modais adaptados para pequenas telas
 
-### **Cores**
-As cores principais estão definidas no arquivo `styles/style.css`:
+## 🎨 Cores do Site
 
-```css
-:root {
-    --primary-purple: #6b46c1;    /* Roxo principal */
-    --secondary-blue: #3b82f6;     /* Azul secundário */
-    --accent-black: #1f2937;       /* Preto de destaque */
-    /* Personalize estas cores conforme necessário */
-}
-```
+- **Roxo:** `#8b5cf6`
+- **Azul:** `#3b82f6`
+- **Azul Escuro:** `#1e1b4b`
+- **Preto:** `#000000`
 
-### **Contato**
-No arquivo `scripts/cart.js`, atualize as informações de contato:
+## 📞 Contato
 
-```javascript
-// Número do WhatsApp
-const whatsappNumber = '5562998806950';
-
-// Instagram
-const instagramHandle = '@dymelti_martinez';
-```
-
-### **Letreiro**
-Para personalizar o texto do letreiro, edite no `index.html`:
-
-```html
-<div class="ticker">
-    <span>SEU TEXTO AQUI SEU TEXTO AQUI SEU TEXTO AQUI </span>
-</div>
-```
-
-## 📱 Funcionalidades
-
-### **Carrinho de Compras**
-- ✅ Adicionar produtos com variações de cor e tamanho
-- ✅ Visualizar itens no carrinho
-- ✅ Calcular total automaticamente
-- ✅ Remover itens individualmente
-- ✅ Finalizar pedido via WhatsApp
-
-### **Catálogo de Produtos**
-- ✅ Galeria de imagens para cada produto
-- ✅ Variações de cor e tamanho
-- ✅ Produtos indisponíveis
-- ✅ Descrições detalhadas
-- ✅ Preços formatados em Real
-
-### **Interface**
-- ✅ Design responsivo
-- ✅ Letreiro animado
-- ✅ Navegação suave
-- ✅ Modals para produtos
-- ✅ Notificações de ações
-- ✅ Botão voltar ao topo
-
-### **Integrações**
-- ✅ WhatsApp para pedidos
-- ✅ Instagram da loja
-- ✅ Links de contato direto
-
-## 🔧 Manutenção
-
-### **Adicionar novos produtos**
-1. Abra `scripts/products.js`
-2. Adicione um novo objeto ao array `products`
-3. Inclua as imagens na pasta apropriada
-4. Faça commit das mudanças
-
-### **Atualizar informações de contato**
-1. Edite `scripts/cart.js` para WhatsApp
-2. Edite `index.html` para redes sociais
-3. Atualize links no footer
-
-### **Modificar cores/design**
-1. Edite as variáveis CSS em `styles/style.css`
-2. Personalize classes conforme necessário
-3. Teste em diferentes dispositivos
-
-## 📊 Performance
-
-O projeto foi otimizado para:
-- ⚡ **Carregamento rápido** com lazy loading
-- 📱 **Mobile-first** design responsivo
-- 🔍 **SEO-friendly** com meta tags apropriadas
-- 💾 **Cache inteligente** para melhor experiência
-- 🖼️ **Imagens otimizadas** com placeholders
-
-## 🛠️ Tecnologias
-
-- **HTML5** - Estrutura semântica
-- **CSS3** - Estilos modernos com Flexbox/Grid
-- **JavaScript ES6+** - Funcionalidades interativas
-- **Font Awesome** - Ícones
-- **Intersection Observer API** - Lazy loading
-- **Web Storage API** - Persistência local
-
-## 📞 Suporte
-
-Para dúvidas sobre implementação ou personalização:
-
-- 📱 WhatsApp: +55 62 99880-6950
-- 📸 Instagram: [@dymelti_martinez](https://instagram.com/dymelti_martinez)
+- **WhatsApp:** +55 62 99880-6950
+- **Instagram:** @dymelti_martinez
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido para uso exclusivo da **DYMELTI MARTINEZ**. 
+Este projeto é de uso livre para a loja DYMELTI MARTINEZ.
 
 ---
 
 **Desenvolvido com ❤️ para DYMELTI MARTINEZ**
-
-*Loja virtual moderna, responsiva e otimizada para conversões.*
