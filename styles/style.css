@@ -42,11 +42,12 @@ body {
 
 .ticker {
     display: inline-block;
-    animation: scroll-left 20s linear infinite;
+    animation: scroll-left 15s linear infinite;
     font-size: 18px;
     font-weight: bold;
     color: var(--white);
     letter-spacing: 2px;
+    white-space: nowrap;
 }
 
 @keyframes scroll-left {
